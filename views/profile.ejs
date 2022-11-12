@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+    <title>ChordBase</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1><span class="fa fa-music"></span> ChordBase <span class="fa fa-music"></span></h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-6">
+          <h3>Your Chords</h3>
+          <ul class="messages">
+          <% for(var i=0; i<messages.length; i++) {%>
+            <li class="message">
+              <span><%= messages[i].root %></span>
+              <span><%= messages[i].sign %></span>
+              <div class="hide a"></div>
+              <div class="hide b"></div>
+              <div class="hide c"></div>
+              <div class="hide d"></div>
+              <div class="hide e"></div>
+              <div class="hide f"></div>
+              <div class="hide g"></div>
+              <span><i class="fa fa-trash-o" aria-hidden="true"></i> Trash </span>
+            </li>
+          <% } %>
+          </ul>
+
+          <!-- <h2>Add a message</h2> -->
+        <!-- <% if (user.local.email) { %>
+          <form action="/messages" method="POST">
+            <input type="text" value="<%= user.local.email %>" name="name">
+            <input type="text" placeholder="message" name="msg">
+            <button type="submit">Submit</button>
+          </form>
+        </div> -->
+        <form action="/messages" method="POST">
+          <label for="rootSelect">Choose a chord:</label>
+
+          <select name="root" id="rootSelect">
+              <option class='chordLetter' value="">-</option>
+              <option class='chordLetter' value="a">A</option>
+              <option class='chordLetter' value="b">B</option>
+              <option class='chordLetter' value="c">C</option>
+              <option class='chordLetter' value="d">D</option>
+              <option class='chordLetter' value="e">E</option>
+              <option class='chordLetter' value="f">F</option>
+              <option class='chordLetter' value="g">G</option>
+          </select>
+
+          <select name="sign" id="signSelect">
+            <option value="">-</option>
+            <option value="natural">Natural</option>
+            <option value="sharp">Sharp</option>
+            <option value="flat">Flat</option>
+          </select>
+          <button type="submit">Submit</button>
+        </form>
+
+        <% } %>
+
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>

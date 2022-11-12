@@ -1,0 +1,53 @@
+body{
+  padding-top:80px;
+  word-wrap:break-word;
+}
+/* img{
+  height: 200px;
+} */
+
+.hide{
+  display: none;
+}
+
+.a{
+  background-image: url('https://www.guitarlessons.org/wp-content/uploads/2022/07/a-chord-diagram.png');
+  object-fit: contain;
+  height: 80px;
+}
+
+.b{
+  background-image: url('');
+  object-fit: contain;
+  height: 80px;
+}
+
+.c{
+  background-image: url('');
+  object-fit: contain;
+  height: 80px;
+}
+
+.d{
+  background-image: url('');
+  object-fit: contain;
+  height: 80px;
+}
+
+.e{
+  background-image: url('');
+  object-fit: contain;
+  height: 80px;
+}
+
+.f{
+  background-image: url('');
+  object-fit: contain;
+  height: 80px;
+}
+
+.g{
+  background-image: url('');
+  object-fit: contain;
+  height: 80px;
+}
