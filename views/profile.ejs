@@ -2,44 +2,47 @@
 <html>
 <head>
     <title>ChordBase</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
-
-    <div class="page-header text-center">
-        <h1><span class="fa fa-music"></span> ChordBase <span class="fa fa-music"></span></h1>
-        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+  <div class="row align-items-center">
+    <div class="col-11">
+      <h1>
+        <span class="fa fa-music"></span>
+        <span class="display-4"> ChordBase </span>
+        <span class="fa fa-music"></span>
+      </h1>
     </div>
-    <div class="row text-center"><h2>Build a custom database of guitar chords.</h2></div>
-    <div class="row">
+    <div class="col-1">
+        <button type="button" href="/logout" class="btn btn-outline-primary" data-beeline-skip="true">Logout</button>
+    </div>
+  </div>
+
+  <div class="row text-center">
+    <div class="col pt-4">
+      <h2>Build a custom database of guitar chords.</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
       <form action="/messages" method="POST" class="text-center">
-        <label for="rootSelect">Choose a chord:</label>
+        <label for="rootSelect">Add a chord:</label>
         <select name="root" id="rootSelect">
             <option class='chordLetter' value="">-</option>
-            <option class='chordLetter' value="a">A</option>
-            <option class='chordLetter' value="b">B</option>
-            <option class='chordLetter' value="c">C</option>
-            <option class='chordLetter' value="d">D</option>
-            <option class='chordLetter' value="e">E</option>
-            <option class='chordLetter' value="f">F</option>
-            <option class='chordLetter' value="g">G</option>
+            <option class='chordLetter' value="A">A</option>
+            <option class='chordLetter' value="B">B</option>
+            <option class='chordLetter' value="C">C</option>
+            <option class='chordLetter' value="D">D</option>
+            <option class='chordLetter' value="E">E</option>
+            <option class='chordLetter' value="F">F</option>
+            <option class='chordLetter' value="G">G</option>
         </select>
-
-        <!-- <select name="sign" id="signSelect">
-          <option value="">-</option>
-          <option value="natural">Natural</option>
-          <option value="sharp">Sharp</option>
-          <option value="flat">Flat</option>
-        </select> -->
         <button type="submit">Submit</button>
-      </form>
-
-
-
-          
+      </form>    
         <!-- <% if (user.local.email) { %>
           <form action="/messages" method="POST">
             <input type="text" value="<%= user.local.email %>" name="name">
@@ -47,32 +50,35 @@
             <button type="submit">Submit</button>
           </form>
         </div> -->
-
-
-        <% } %>
-        </div>
-
-  
-  
-  <div class="col-sm-4">
-    <h3>Your Chords</h3>
-    <ul class="messages">
-    <% for(var i=0; i<messages.length; i++) {%>
-      <li class="message">
-        <h3><%= messages[i].root %></h3>
-        <h4><i class="fa fa-trash-o" aria-hidden="true"></i> Delete Chord</h4>
-        <h4><i class="fa fa-eye" aria-hidden="true"></i> View Diagram</h4>
-      </li>
+    </div>
     <% } %>
-    </ul>
-  </div>
+    </div>
 
-  <div class="col-sm-8">
-    <img src="" class="text-center" id="" style="height: 400px;"></h4>
+  
+  <div class="row">
+    <div class="col-6">
+      <h3>Your Chords</h3>
+      <ul class="messages">
+      <% for(var i=0; i<messages.length; i++) {%>
+        <li class="message bg-light border border-primary p-2 mb-2">
+          <h3><%= messages[i].root %></h3>
+          <h4><i class="fa fa-trash-o" aria-hidden="true"></i> Delete Chord</h4>
+          <h4><i class="fa fa-eye" aria-hidden="true"></i> View Diagram</h4>
+        </li>
+      <% } %>
+      </ul>
+    </div>
+
+    <div class="col-6">
+      <img src="" class="text-center" id="" style="height: 400px;"></h4>
+    </div>
   </div>
 </div>
 
 <script src="main.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 </html>
